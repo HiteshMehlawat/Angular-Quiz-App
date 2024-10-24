@@ -1,0 +1,186 @@
+<div class="container my-5 d-flex flex-column align-items-center">
+  <!-- header bpx -->
+  <div class="heading border border-5 border-info rounded-2 p-4 w-100">
+    <!-- upper header with name  -->
+    <header
+      class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
+    >
+      <!-- computer icon -->
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="50"
+        height="50"
+        fill="currentColor"
+        class="bi bi-pc-display-horizontal nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M1.5 0A1.5 1.5 0 0 0 0 1.5v7A1.5 1.5 0 0 0 1.5 10H6v1H1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5v-1h4.5A1.5 1.5 0 0 0 16 8.5v-7A1.5 1.5 0 0 0 14.5 0zm0 1h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5M12 12.5a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0m2 0a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0M1.5 12h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1M1 14.25a.25.25 0 0 1 .25-.25h5.5a.25.25 0 1 1 0 .5h-5.5a.25.25 0 0 1-.25-.25"
+        />
+      </svg>
+
+      <h1
+        class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"
+      >
+        Angular Test
+      </h1>
+
+      <div class="userDetails text-end">
+        <h4>{{ uname }}</h4>
+        <h6 class="text-muted">{{ uemail }}</h6>
+      </div>
+    </header>
+    <hr />
+    <!-- timer and question section -->
+    <div
+      class="timer-Container container d-flex flex-wrap align-items-center justify-content-around justify-content-lg-start px-5"
+    >
+      <!-- checkBox icon-->
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="25"
+        height="25"
+        fill="currentColor"
+        class="bi bi-ui-checks nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M7 2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5zM2 1a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2zm0 8a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2zm.854-3.646a.5.5 0 0 1-.708 0l-1-1a.5.5 0 1 1 .708-.708l.646.647 1.646-1.647a.5.5 0 1 1 .708.708zm0 8a.5.5 0 0 1-.708 0l-1-1a.5.5 0 0 1 .708-.708l.646.647 1.646-1.647a.5.5 0 0 1 .708.708zM7 10.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5zm0-5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0 8a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5"
+        />
+      </svg>
+
+      <div
+        class="ques-numbers nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"
+      >
+        <h5>
+          Question
+          <span class="text-primary">{{ currentQuestion + 1 }}</span> of
+          <span class="text-primary">{{ questionArray.length }}</span>
+        </h5>
+      </div>
+
+      <div class="timer text-end">
+        <h4>
+          <span class="text-danger">{{ counter }}</span> sec
+          <!-- timer/watch icon -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="25"
+            height="25"
+            fill="currentColor"
+            class="bi bi-stopwatch-fill"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M6.5 0a.5.5 0 0 0 0 1H7v1.07A7.001 7.001 0 0 0 8 16a7 7 0 0 0 5.29-11.584l.013-.012.354-.354.353.354a.5.5 0 1 0 .707-.707l-1.414-1.415a.5.5 0 1 0-.707.707l.354.354-.354.354-.012.012A6.97 6.97 0 0 0 9 2.071V1h.5a.5.5 0 0 0 0-1zm2 5.6V9a.5.5 0 0 1-.5.5H4.5a.5.5 0 0 1 0-1h3V5.6a.5.5 0 1 1 1 0"
+            />
+          </svg>
+        </h4>
+      </div>
+    </div>
+  </div>
+
+  <!-- question-box -->
+  <div
+    class="question-box row bg-secondary text-white rounded-2 my-2 p-3 pb-2 w-100"
+  >
+    <h4>
+      <span>{{ questionArray[currentQuestion].questionNumber }}.</span>
+      {{ questionArray[currentQuestion].questionLabel }}
+    </h4>
+  </div>
+
+  <!-- option-box -->
+  <div class="row w-100 rounded-2 my-2">
+    <div class="option-box bg-light rounded-2 border border-2 p-3">
+      <div
+        *ngFor="let option of questionArray[currentQuestion].options"
+        class="select-opt w-100 my-1 p-2 rounded-2 border border-2 bg-white text-start btn cursor-pointer"
+        (click)="onSelect(option, questionArray[currentQuestion])"
+        [ngClass]="{
+          'bg-success text-white':
+            questionArray[currentQuestion].selectedOption === option.label,
+          'bg-white':
+            questionArray[currentQuestion].selectedOption !== option.label
+        }"
+      >
+        {{ option.label }}
+      </div>
+      <div
+        class="option-foot d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start mt-4 mb-2"
+      >
+        <!-- left-arrow -->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="35"
+          height="35"
+          fill="currentColor"
+          class="bi bi-arrow-left-circle nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"
+          viewBox="0 0 16 16"
+          (click)="previousQuesn()"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"
+          />
+        </svg>
+
+        <!-- repeat-logo -->
+        <div
+          class="revist nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="35"
+            height="35"
+            fill="currentColor"
+            class="bi bi-repeat"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M11 5.466V4H5a4 4 0 0 0-3.584 5.777.5.5 0 1 1-.896.446A5 5 0 0 1 5 3h6V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192m3.81.086a.5.5 0 0 1 .67.225A5 5 0 0 1 11 13H5v1.466a.25.25 0 0 1-.41.192l-2.36-1.966a.25.25 0 0 1 0-.384l2.36-1.966a.25.25 0 0 1 .41.192V12h6a4 4 0 0 0 3.585-5.777.5.5 0 0 1 .225-.67Z"
+            />
+          </svg>
+          &nbsp;&nbsp;
+          <h4>Revisit Questions</h4>
+        </div>
+
+        <!-- right -arrow -->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="35"
+          height="35"
+          fill="currentColor"
+          class="bi bi-arrow-right-circle text-end text-primary"
+          viewBox="0 0 16 16"
+          (click)="nextQuesn()"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- circle badge -->
+  <div class="quens-with-circle d-flex flex-row">
+    <span
+      *ngFor="let question of questionArray; let i = index"
+      (click)="onClickChange(i)"
+      [ngClass]="{
+        'bg-success text-white': currentQuestion === i,
+        'bg-secondary-subtle':
+          currentQuestion !== i && question.selectedOption === null && !question.isBlocked,
+        'bg-success-subtle text-white':
+          question.selectedOption !== null && currentQuestion !== i,
+        'bg-danger text-white': question.isBlocked,
+      }"
+      class="p-2 d-block text-center lh-1 me-2 rounded-circle btn cursor-pointer"
+    >
+      {{ i + 1 }}
+    </span>
+  </div>
+  <div class="margin"></div>
+</div>

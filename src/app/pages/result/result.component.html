@@ -1,0 +1,52 @@
+<div class="container d-flex justify-content-center">
+  <div class="resultbox card bg-secondary-subtle shadow w-75">
+    <!-- card body -->
+    <div class="card-body p-10 text-center">
+      <!-- text -->
+      <div class="mb-4">
+        <h2>{{ resultMsg }}</h2>
+        <p class="mb-0 px-lg-8">
+          You are successfully completed the quiz. Now you click on finish and
+          back to your Login page.
+        </p>
+      </div>
+      <!-- text -->
+      <div class="mt-3">
+        <span>
+          Total Question:
+          <span class="text-dark">{{ totalQuestions }}</span>
+        </span>
+        <br />
+        <span>
+          Attempted Question:
+          <span class="text-dark">{{ attemptedQuestions }}</span>
+        </span>
+        <span class="mt-2 d-block">
+          Passing Score:
+          <span class="text-dark">6</span>
+        </span>
+        <br />
+        <br />
+        <span>
+          <h4 class="text-dark">
+            Your Score: <span class="text-success">{{ score }}</span>
+          </h4>
+        </span>
+        <br />
+      </div>
+      <!-- btn -->
+      <div class="mt-5">
+        <a
+          [routerLink]="['/login']"
+          routerLinkActive="router-link-active"
+          class="btn btn-primary"
+          >Finish</a
+        >
+        <a [routerLink]="['/quizPage']" class="btn btn-outline-secondary ms-2">
+          Again
+          <i class="fe fe-external-link"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
