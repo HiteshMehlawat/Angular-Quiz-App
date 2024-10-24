@@ -264,7 +264,7 @@ export class QuizPageComponent implements OnInit {
   score: number = 0;
   counter: number = 10;
   quentionIntervals$: Subscription = new Subscription();
-
+  alertShown: boolean = false;
 
   constructor(private router:Router) {
     
@@ -282,25 +282,41 @@ export class QuizPageComponent implements OnInit {
     }
   }
 
-  nextQuesn() {
-   if(this.currentQuestion !== this.questionArray.length-1){
-    if (this.currentQuestion < this.questionArray.length - 1) {
-      if (!this.questionArray[this.currentQuestion].selectedOption && this.counter > 0) {
-        this.questionArray[this.currentQuestion].timeLeft = this.counter; // Save the remaining time for skipped questions
-      }
-      this.currentQuestion++;
-      this.resetCounter();
+    nextQuesn() {
+      // Check if the current question is not the last one
+    // if(this.currentQuestion !== this.questionArray.length-1){
+      if (this.currentQuestion < this.questionArray.length - 1) {
+
+         // Save the remaining time for skipped questions
+        if (!this.questionArray[this.currentQuestion].selectedOption && this.counter > 0) {
+
+          this.questionArray[this.currentQuestion].timeLeft = this.counter; // Save the remaining time for skipped questions
+        }
+
+        // Move to the next question
+        this.currentQuestion++;
+        this.resetCounter();// Reset the timer for the next question
+      // }
+
+    }else{
+      // Quiz is complete
+      const attemptedQuestions = this.questionArray.filter(q => q.selectedOption !== null).length;
+
+      // Check if the user is logged in
+    const isLoggedIn = localStorage.getItem('uname') !== null;
+
+    if (isLoggedIn && !this.alertShown) {
+      alert('Quiz Completed!! It will Automatically Redirect to Result Page');
+      this.alertShown = true; // Prevents the alert from showing again
     }
-   }else{
-    const attemptedQuestions = this.questionArray.filter(q => q.selectedOption !== null).length;
-    alert('Quiz Completed!! It will Automatically Redirect to Result Page ')
-    this.router.navigate(['result'], {
-      queryParams: {
-        score: this.score,
-        attempted: attemptedQuestions,
-        total: this.questionArray.length
-      }
-    });
+
+      this.router.navigate(['result'], {
+        queryParams: {
+          score: this.score,
+          attempted: attemptedQuestions,
+          total: this.questionArray.length
+        }
+      });
     
    }
   }
@@ -318,7 +334,9 @@ export class QuizPageComponent implements OnInit {
 
     // If the current selection is correct and hasn't been selected before, increment score
   if (option.correct && question.selectedOption !== option.label) {
+    
     this.score++; // Increment score if selecting a correct option for the first time
+
   } else if (!option.correct && question.selectedOption === option.label) {
     // If the user unselects the correct option, decrement the score
     this.score--;
